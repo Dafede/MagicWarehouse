@@ -26,7 +26,7 @@ function upload(){
     if (x.value == "") {
       txt += "Select one or more files.";
     } else {
-      txt += "The files property is not supported by your browser!";
+      txt += "Not Supported";
       txt  += "<br>The path of the selected file: " + x.value; 
     }
   }
