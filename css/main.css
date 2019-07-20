@@ -314,7 +314,13 @@ Gold:   ffd387 rgb(255, 211, 135)   D4AF37 rgb(212, 175, 55)
 		background-color: white;
 		border-radius: 25%;
 }
-
+.image-card-collection{
+	margin: 0.5em;
+	 transition: transform .2s;
+}
+.image-card-collection:hover{
+	 transform: scale(1.5);
+}
 /********
 *********
 ********/

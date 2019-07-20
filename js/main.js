@@ -1,5 +1,6 @@
 const cardList =[];
 var readCardList = [];
+
 $(document).ready(function () {
 	
 //UPLOAD FILE
@@ -33,51 +34,6 @@ function upload(){
   document.getElementById("demo").innerHTML = txt;
 }
 
-
-/*
-jQuery('input[type=file]').change(function(){
- var filename = jQuery(this).val().split('\\').pop();
- var idname = jQuery(this).attr('id');
- console.log(jQuery(this));
- console.log(filename);
- console.log(idname);
- jQuery('span.'+idname).next().find('span').html(filename);
-});
-
-
-*/
-
-
-/*
----CAMPOS---
-"id				": "3313bd5c-b657-47a3-822a-dd0d9165492a",
-"name			": "Healer's Hawk",
-******"image_uris		": "https.//img...",
-"lang			": "en",
-"mana_cost		": "{W}",
-"cmc			": 1.0,
-"type_line		": "Creature — Bird",
-"oracle_text	": "Flying, lifelink",
-"power			": "1",
-"toughness		": "1",
-"colors			": ["W"],
-"color_identity	": ["W"],
-"set			": "grn",
-collector_number
-*/
-/*
-
-CODE	PRINTED CODE	LANGUAGE	CARDS
-en		en				English		45,366
-es		sp				Spanish		26,966
-fr		fr				French		27,091
-de		de				German		26,495
-it		it				Italian		27,372
-pt		pt				Portuguese	23,796
-ja		jp				Japanese	28,980
-
-*/
-
 $("#buttonSearchCard").click(function( event ) {
   event.preventDefault();
 	var lang = "";
@@ -92,9 +48,12 @@ $("#buttonSearchCard").click(function( event ) {
 
 
   $.getJSON('https://api.scryfall.com/cards/'+$("#inputEditionCode").html().toLowerCase()+'/'+$("#inputCardNumber").val()+'/'+lang, function(data) {
+	
 	  var card = {
 		id: data.id,
 		name: data.name,
+		image_uris_small: data.image_uris.small,
+		image_uris_normal: data.image_uris.normal,
 		lang: data.lang,
 		mana_cost: data.mana_cost,
 		cmc: data.cmc,
@@ -108,7 +67,8 @@ $("#buttonSearchCard").click(function( event ) {
 		collector_number: data.collector_number,
 		observations: ""
 	};
-	addCard(card);
+	//addCard(card);
+	addCardImage(card);
 	cardList.push(card);
 });
 
@@ -119,12 +79,6 @@ $("#buttonDownload").click(function( event ) {
 	  event.preventDefault();
 	  download(cardList);
 });
-
-$("#buttonUpload").click(function( event ) {
-	  //event.preventDefault();
-	  //upload();
-});
-
 
 	
     $( "#inputEdition" ).autocomplete({
@@ -360,6 +314,19 @@ var availableTags = [
 ["Commander 2019","C19",""],
 ["Throne of Eldraine","",""]
 ];
+
+function addCardImage(card){
+	var img = $("<img class='image-card-collection' />").attr('src', card.image_uris_small)
+    .on('load', function() {
+        if (!this.complete || typeof this.naturalWidth == "undefined" || this.naturalWidth == 0) {
+            console.log("Broken Image");
+        } else {
+            $("#cardCollectionSection").append(img);
+        }
+    });
+	
+	
+}
 
 function addCard(card){
 	var cardSet = "<i class='ss ss-"+card.set+"'></i>";
