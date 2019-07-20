@@ -96,12 +96,7 @@ body {
 #formSection{
 	width: 100%;
 }
-#cardCollectionSection{
-	background-color: #DDD;
-	min-height: 5em;
-	margin-left:1em;
-	margin-right:1em;
-}
+
 
 /**************************
 ***************************
@@ -314,13 +309,7 @@ Gold:   ffd387 rgb(255, 211, 135)   D4AF37 rgb(212, 175, 55)
 		background-color: white;
 		border-radius: 25%;
 }
-.image-card-collection{
-	margin: 0.5em;
-	 transition: transform .2s;
-}
-.image-card-collection:hover{
-	 transform: scale(1.5);
-}
+
 /********
 *********
 ********/
@@ -354,4 +343,59 @@ Gold:   ffd387 rgb(255, 211, 135)   D4AF37 rgb(212, 175, 55)
 		width:45%;
 	margin-left: 5%;
 	margin-bottom: 0;
+}
+/********************************************************/
+/*container*/
+.image-card-collection-container{
+	height: 204px;
+	width: 146px;
+	position: relative;
+}
+/*above*/
+.image-card-collection-above{
+	height: 204px;
+	/*width: 146px;*/
+	width: 0px;
+	background-color: #AAA;
+	z-index:10;
+	position: absolute;
+	opacity: 0.75;
+	display:none;
+}
+
+/*img*/
+.image-card-collection{
+
+}
+#cardCollectionSection{
+	background-color: #DDD;
+	margin-left:1em;
+	margin-right:1em;
+	min-height: 204px;
+	width: 100%;
+}
+.image-card-collection-above-observations{
+	height: 164px;
+	width: 146px;
+	background-color: #DDD;
+	opacity: 0.9;
+	color: #111;
+	font-weight: bold;
+	padding: 0.5em;
+}
+.image-card-collection-above-delete{
+	height: 40px;
+	width: 146px;
+	background-color: #333;
+	text-align: center;
+	font-size: 1.2em;
+	opacity: 0.9;
+	color: #FFF;
+}
+.image-card-collection-above-delete-span{
+	
+}
+.image-card-collection-above-delete-span:hover{
+	cursor:pointer;
+	color:#F1F;
 }

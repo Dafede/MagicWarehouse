@@ -12,100 +12,59 @@
 	</head>
 	<body >
 		<div id="formSection">
-		
-		<form class="form-signin text-center">
-			<!--
-			<div class="ui-widget">
-				<input id="tags" type="text" class="form-control" >
-			</div>
-			-->
-		
-			<h1 class="h3 mb-3 font-weight-normal">-Card Info-</h1>
-			<div class="cardInfoGroup">
-				<label for="inputCardNumber" class="sr-only">Card Number</label>
-				<input type="text" id="inputCardNumber" class="form-control" placeholder="Card Number">
-			</div>
-			<div class="cardInfoGroup">
-				<label for="inputEdition" class="sr-only">Edition</label>
-				<input type="text" id="inputEdition" class="form-control" placeholder="Edition">
-				
-				<span id="inputEditionCode"></span>
-				<span id="inputEditionIcon"></span>
-			</div>
-			<div class="btn-group btn-group-toggle cardInfoGroup" data-toggle="buttons">
-			  <label class="btn btn-secondary active">
-				<input type="radio" name="options" id="radioSpanish" autocomplete="off" checked> Spanish
-			  </label>
-			  <label class="btn btn-secondary">
-				<input type="radio" name="options" id="radioEnglish" autocomplete="off"> English
-			  </label>
-			  <label class="btn btn-secondary">
-				<input type="radio" name="options" id="radioFrench" autocomplete="off"> French
-			  </label>
-			  <label class="btn btn-secondary">
-				<input type="radio" name="options" id="radioGerman" autocomplete="off"> German
-			  </label>
-			  <label class="btn btn-secondary">
-				<input type="radio" name="options" id="radioItalian" autocomplete="off"> Italian
-			  </label>
-			  <label class="btn btn-secondary">
-				<input type="radio" name="options" id="radioPortuguese" autocomplete="off"> Portuguese
-			  </label>			  
-			  <label class="btn btn-secondary">
-				<input type="radio" name="options" id="radioJapanese" autocomplete="off"> Japanese
-			  </label>			  
-			</div>
-			<div class="cardInfoGroup">
-			<button id="buttonSearchCard" class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
-			</div>
-			<div class="cardInfoGroup row button-loads">
-				<button id="buttonDownload" class="btn btn-lg btn-primary " type="submit">Download</button>
-				<input type="file" id="buttonUpload" multiple size="50" class="btn btn-lg btn-primary inputfile" onchange="uploaded()">
-				<label for="buttonUpload" class="btn btn-lg btn-primary button-label-file">Upload</label>
-				<p id="demo"></p>
-			</div>
-		</form>
-			</div>
-			
-		<div id="cardCollectionSection" class="row">
-
-
-<!--
-			<div class="magic-card color-type-blue">
-					<div class="card-name-cost row">
-						<div class="card-name-cost-name">Nameless Card of Fate</div>
-						<div class="card-name-cost-cost row">
-							<div class="incolore-cost">2</div>
-							<div class="blue-cost"></div>
-							<div class="blue-cost"></div>
-							<div class="blue-cost"></div>
-							<div class="blue-cost"></div>
-							<div class="blue-cost"></div>
-						</div>
-					</div>
-					<div class="card-image"></div>
-					<div class="card-type-set row">
-						<div class="card-type-set-type">Creature - Bird</div>
-						<div class="card-type-set-set">GRN<i class='ss ss-war'></i></div>
-					</div>
-					<div class="card-text">
-						Fly, lifelink. When Pepito enter the battlefield win the game and you can laugh at your opponent.
-					</div>
-					<div class="card-collector-force row">
-						<div class="card-collector-force-collector">014</div>
-						<div class="card-collector-force-force">11/31</div>
-					</div>
-			</div>
-			
-			-->
-	
+			<form class="form-signin text-center">
+				<h1 class="h3 mb-3 font-weight-normal">-Card Info-</h1>
+				<div class="cardInfoGroup">
+					<label for="inputCardNumber" class="sr-only">Card Number</label>
+					<input type="text" id="inputCardNumber" class="form-control" placeholder="Card Number">
+				</div>
+				<div class="cardInfoGroup">
+					<label for="inputEdition" class="sr-only">Edition</label>
+					<input type="text" id="inputEdition" class="form-control" placeholder="Edition">
+					<span id="inputEditionCode"></span>
+					<span id="inputEditionIcon"></span>
+				</div>
+				<div class="btn-group btn-group-toggle cardInfoGroup" data-toggle="buttons">
+					<label class="btn btn-secondary active">
+					<input type="radio" name="options" id="radioSpanish" autocomplete="off" checked> Spanish
+					</label>
+					<label class="btn btn-secondary">
+					<input type="radio" name="options" id="radioEnglish" autocomplete="off"> English
+					</label>
+					<label class="btn btn-secondary">
+					<input type="radio" name="options" id="radioFrench" autocomplete="off"> French
+					</label>
+					<label class="btn btn-secondary">
+					<input type="radio" name="options" id="radioGerman" autocomplete="off"> German
+					</label>
+					<label class="btn btn-secondary">
+					<input type="radio" name="options" id="radioItalian" autocomplete="off"> Italian
+					</label>
+					<label class="btn btn-secondary">
+					<input type="radio" name="options" id="radioPortuguese" autocomplete="off"> Portuguese
+					</label>			  
+					<label class="btn btn-secondary">
+					<input type="radio" name="options" id="radioJapanese" autocomplete="off"> Japanese
+					</label>			  
+				</div>
+				<div class="cardInfoGroup">
+					<button id="buttonSearchCard" class="btn btn-lg btn-primary btn-block" type="submit">Search</button>
+				</div>
+				<div class="cardInfoGroup row button-loads">
+					<button id="buttonDownload" class="btn btn-lg btn-primary " type="submit">Download</button>
+					<input type="file" id="buttonUpload" multiple size="50" class="btn btn-lg btn-primary inputfile" onchange="uploaded()">
+					<label for="buttonUpload" class="btn btn-lg btn-primary button-label-file">Upload</label>
+					<p id="demo"></p>
+				</div>
+			</form>
 		</div>
-			
-
+		<div id="cardCollectionSection" class="row">				
+		</div>
 		</div>
 		<script src="js/jquery-3.4.1.min.js"></script>
-				<script src="js/bootstrap.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery-ui-autocomplete.min.js"></script>
+		<script src="js/support.js"></script>
 		<script src="js/main.js"></script>
 	</body>
 </html>
