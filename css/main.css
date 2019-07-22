@@ -93,9 +93,7 @@ body {
 .btn-group-toggle label {
 	font-size: 0.75em !important;
 }
-#formSection{
-	width: 100%;
-}
+
 
 
 /**************************
@@ -399,3 +397,56 @@ Gold:   ffd387 rgb(255, 211, 135)   D4AF37 rgb(212, 175, 55)
 	cursor:pointer;
 	color:#F1F;
 }
+
+/*************
+**************
+*************/
+.filter-searcher-section{
+	width: 100%;
+	background-color: #3f1;
+	
+}
+.form-signin{
+	margin: 0;
+}
+#formSection-main{
+	display: flex;
+	width: 100%;
+}
+
+#formSectionInfo{
+	width: 50%
+}
+#formSectionInfo form{
+	margin-left: 25%;
+}
+#formSectionFilter{
+	width: 50%
+}
+#formSectionFilter form{
+		margin-left: 25%;
+}
+.dropdownColor div .blue{
+	background-color: #AAE0FA;
+}
+.dropdownColor div .red{
+	background-color: #F9AA8F;
+}
+.dropdownColor div .black{
+	background-color: #CBC2BF;
+}
+.dropdownColor div .white{
+	background-color: #FFFBD5;
+}
+.dropdownColor div .green{
+	background-color: #9BD3AE;
+}
+
+/*
+Blue: AAE0FA
+White:FFFBD5
+Black:CBC2BF
+Red: F9AA8F
+Green:9BD3AE
+Gold: ffd387
+*/

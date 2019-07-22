@@ -11,9 +11,10 @@
 		<link rel="stylesheet" href="css/keyrune.min.css" >
 	</head>
 	<body >
-		<div id="formSection">
+		<div id="formSection-main">
+		<div id="formSectionInfo">
 			<form class="form-signin text-center">
-				<h1 class="h3 mb-3 font-weight-normal">-Card Info-</h1>
+				<h1 class="h3 mb-3 font-weight-normal">Card Info</h1>
 				<div class="cardInfoGroup">
 					<label for="inputCardNumber" class="sr-only">Card Number</label>
 					<input type="text" id="inputCardNumber" class="form-control" placeholder="Card Number">
@@ -58,10 +59,91 @@
 				</div>
 			</form>
 		</div>
+				<div id="formSectionFilter">
+			<form class="form-signin text-center">
+				<h1 class="h3 mb-3 font-weight-normal">Card Filter</h1>
+				<div class="cardInfoGroup">
+<div class="dropdown dropdownColor">
+<span>Color: </span>
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonColor" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    All
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item blue" href="#">Blue</a>
+    <a class="dropdown-item red" href="#">Red</a>
+    <a class="dropdown-item black" href="#">Black</a>
+    <a class="dropdown-item white" href="#">White</a>
+    <a class="dropdown-item green" href="#">Green</a>
+	<a class="dropdown-item all" href="#">All</a>
+  </div>
+</div>
+				</div>
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="cardInfoGroup">
+<div class="dropdown dropdownType">
+<span>Type: </span>
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButtonType" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    All
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item " href="#">Creature</a>
+    <a class="dropdown-item " href="#">Instant</a>
+    <a class="dropdown-item " href="#">Sorcery</a>
+    <a class="dropdown-item " href="#">Enchantment</a>
+    <a class="dropdown-item " href="#">Planeswalker</a>
+  </div>
+</div>
+				</div>
+				
+		
+
+					<div class="cardInfoGroup">
+					<label for="inputEditionFilter" class="sr-only">Edition</label>
+					<input type="text" id="inputEditionFilter" class="form-control" placeholder="Edition">
+					<span id="inputEditionCodeFilter"></span>
+					<span id="inputEditionIconFilter"></span>
+				</div>	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				<div class="cardInfoGroup">
+					<button id="buttonFilterCard" class="btn btn-lg btn-primary btn-block" type="submit">Filter</button>
+				</div>
+			</form>
+		</div>
+			</div>
+		
+
 		<div id="cardCollectionSection" class="row">				
 		</div>
 		</div>
 		<script src="js/jquery-3.4.1.min.js"></script>
+		<script src="js/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script src="js/jquery-ui-autocomplete.min.js"></script>
 		<script src="js/support.js"></script>

@@ -57,6 +57,60 @@ $(document).ready(function() {
 			return $("<div class='ui-auto-min-item'><li class='ui-autocomplete-row'>" + item[0] + " " + item[2] + " <span><b>" + item[1] + "</b></span></li></div>")
 				.appendTo(ul);
 		};
+		
+		$("#inputEditionFilter").autocomplete({
+			source: availableTags,
+			minLength: 1,
+			select: function(event, ui) {
+				event.preventDefault();
+				$("#inputEditionFilter").val(ui.item[0]);
+				$("#inputEditionCodeFilter").html(ui.item[1]);
+				$("#inputEditionIconFilter").html(ui.item[2]);
+			}
+		})
+		.data("ui-autocomplete")._renderItem = function(ul, item) {
+			return $("<div class='ui-auto-min-item'><li class='ui-autocomplete-row'>" + item[0] + " " + item[2] + " <span><b>" + item[1] + "</b></span></li></div>")
+				.appendTo(ul);
+		};
+		
+		
+		$(".dropdownColor div .blue").click(function(event) {
+			event.preventDefault();
+			$("#dropdownMenuButtonColor").html("Blue");
+			$("#dropdownMenuButtonColor").css("background-color", "#AAE0FA");
+			filterByColor("U");
+		});
+		$(".dropdownColor div .red").click(function(event) {
+			event.preventDefault();
+			$("#dropdownMenuButtonColor").html("Red");
+			$("#dropdownMenuButtonColor").css("background-color", "#F9AA8F");
+			filterByColor("R");
+		});
+		$(".dropdownColor div .black").click(function(event) {
+			event.preventDefault();
+			$("#dropdownMenuButtonColor").html("Black");
+			$("#dropdownMenuButtonColor").css("background-color", "#CBC2BF");
+			filterByColor("B");
+		});
+		$(".dropdownColor div .white").click(function(event) {
+			event.preventDefault();
+			$("#dropdownMenuButtonColor").html("White");
+			$("#dropdownMenuButtonColor").css("background-color", "#FFFBD5");
+			filterByColor("W");
+		});
+		$(".dropdownColor div .green").click(function(event) {
+			event.preventDefault();
+			$("#dropdownMenuButtonColor").html("Green");
+			$("#dropdownMenuButtonColor").css("background-color", "#9BD3AE");
+			filterByColor("G");
+		});
+		$(".dropdownColor div .all").click(function(event) {
+			event.preventDefault();
+			$("#dropdownMenuButtonColor").html("All");
+			$("#dropdownMenuButtonColor").css("background-color", "#6c757d");
+			filterByColor("A");
+		});
+		
 });
 
 function addCardImage(card) {
@@ -81,6 +135,8 @@ function addCardImage(card) {
 	/></div>
 	`;
 	$("#cardCollectionSection").append(imgFull);
+	
+	// Events pinned to this card added
 	$(".image-card-collection").mouseenter(function() {
 		$(this).siblings(".image-card-collection-above").show();
 	});
@@ -119,9 +175,10 @@ function uploaded() {
 
 function loadCards(readCardList) {
 	for (k = 0; k < readCardList.length; k++) {
-		setTimeout(addCardImage, 500, readCardList[k]);
+		setTimeout(addCardImage, 50, readCardList[k]);
 	}
 }
+
 function deleteCardFromLisst(idDelete){
 	for (w = 0; w < cardList.length; w++) {
 		if(cardList[w].id_time = idDelete){
@@ -129,13 +186,32 @@ function deleteCardFromLisst(idDelete){
 		}
 	}
 }
+
 function saveObservations(idObs, obs){
-	console.log(idObs);
-	console.log(obs);
 	for (w = 0; w < cardList.length; w++) {
 		if(cardList[w].id_time = idObs){
 			cardList[w].observations = obs;
 		}
 	}
-	console.log(cardList);
+}
+
+function filterByColor(color){
+	var listCardChild = $("#cardCollectionSection").children();
+	if("A" == color) {
+		for (j= 0; j < listCardChild.length; j++) {	
+			$(listCardChild[j]).show();
+		}
+	}else{
+		for (q = 0; q < cardList.length; q++) {	
+			for (y = 0; y < cardList[q].colors.length; y++) {
+				if (cardList[q].colors[y] != color){
+					$(listCardChild[q]).hide();
+				}else{
+					$(listCardChild[q]).show();
+					break;
+				}
+			}
+		}
+	}
+
 }
